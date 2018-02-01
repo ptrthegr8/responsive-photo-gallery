@@ -1,88 +1,50 @@
 body {
-    width: 100%;
-    margin: 0 auto;
-    height: 100vh;
-    display: flex;
-    padding: 10px;
+    margin: 0;
+    font-family: fantasy;
 }
 
 header {
-    border: 1px solid black;
-    margin: 0 auto;
-    height: 150px;
-    width: 75%;
     text-align: center;
-    margin-bottom: 2em;
-    justify-content: center;
-    flex: 1;
-    background: bisque;
+    padding: 32px;
+    border: 1px solid black;
 }
 
-main {
-    margin: 0 auto;
-    width: 100vw;
-}
-
-/* div {
-    border: 1px solid blue;
-    width: 200px;
-    height: 100px;
+.masonry-container {
     display: flex;
-} */
-
-#masonry-container {
-    display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
-    flex: 1;
-    padding: 10px;
-    height: 75vw;
-    /* justify-content: center; */
-    align-content: space-around;
-    /* column-count: 2;*/
-    column-gap: 0;
-    background: orange; 
-
-}
-/* .masonry-container__column {
-width: 5px;
-} */
-
-.image {
-  max-width: 100%;
-  padding: 0;
-  border-radius: 10px;
+    padding: 0 4px;
 }
 
-
-.flex-card {
-    display: flex;
-    flex: 1 1 auto;
-    width: 236px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    /*color and stuff*/
-    background-color: red;
-    border: 2px solid blue;
+.masonry-container__column {
+    flex: 50%;
+    max-width: 50%;
+    padding: 0 4px;
 }
-/*indvidual cards
-#card1 {}
 
-#card2 {}
-
-#card3 {}
-
-#card4 {}
-
-#card5 {}
-
-#card6 {}
-*/
-
-@media (min-width: 480px)
-{
-
+.masonry-container__column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
 }
-@media (min-width: 640px) {
 
+* {
+    box-sizing: border-box;
+}
+
+@media (min-width: 800px) {
+    .masonry-container__column {
+        flex: 50%;
+        max-width: 50%;
+    }
+    header {
+        flex: 33%;
+        min-width: 33%;
+    }
+    body {
+        display: flex;
+    }
+    .masonry-container__column img {
+        flex: 100%;
+        max-width: 100%;
+    }
 }
